@@ -1,0 +1,10 @@
+{
+  "main_path": "data",
+  "model_path": "models/teste",
+  "batch_size": 32,
+  "learning_rate": 1e-3,
+  "epochs": 100,
+  "input_shape": [224, 224, 3],
+  "conv_filters": [16, 32],
+  "dense_filters": [1024]
+}
