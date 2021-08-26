@@ -4,7 +4,7 @@
   "batch_size": 32,
   "learning_rate": 1e-3,
   "epochs": 100,
-  "input_shape": [224, 224, 3],
-  "conv_filters": [16, 32],
-  "dense_filters": [1024]
+  "input_shape": [128, 128, 3],
+  "conv_filters": [8, 16],
+  "dense_filters": [64]
 }

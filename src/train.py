@@ -5,7 +5,6 @@ import json
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
-
 from tensorflow.keras.layers import ReLU
 from tensorflow.keras.layers import BatchNormalization, Dropout, MaxPooling2D
 from tensorflow.keras.layers import Input, Dense, Conv2D, GlobalAveragePooling2D
@@ -180,8 +179,8 @@ def train_model(model, datasets: list):
     train, validation, test = datasets
     model_path = os.path.join(MODEL_PATH, 'model')
     mc = ModelCheckpoint(
-        monitor='val_recall',
-        mode='max',
+        monitor='val_loss',
+        mode='min',
         filepath=model_path,
         verbose=2,
         save_weights_only=True,

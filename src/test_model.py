@@ -1,6 +1,7 @@
 import os
 import json
 
+import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
@@ -28,8 +29,9 @@ def main():
 
     for batch in test_ds.as_numpy_iterator():
         for img, label in zip(batch[0], batch[1]):
+            prediction = model.predict(np.expand_dims(img, 0))[0][0]
             plt.imshow(img, interpolation='bicubic')
-            plt.suptitle(f"Prediction: {label}")
+            plt.suptitle(f"Prediction: {np.round(prediction)} | Label: {label}")
             plt.tight_layout()
             plt.show()
         break
